@@ -18,8 +18,12 @@ with open('input.txt', mode='r+t') as f:
 	epsilon_rate = ''
 	gamma_rate = ''
 	# Determine epsilon and gamma bit by position counts
-	for pos, zero_count, ones_count in counts.items():
-		print(pos, zero_count,ones_count)
-		
-
-
+	for pos, binary_counts in counts.items():
+		zero_cnt, ones_cnt = binary_counts
+		if zero_cnt > ones_cnt:
+			epsilon_rate += '1'
+			gamma_rate += '0'
+		else:
+			epsilon_rate += '0'
+			gamma_rate += '1'			
+	print(int(epsilon_rate, 2) * int(gamma_rate, 2))
