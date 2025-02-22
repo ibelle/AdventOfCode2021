@@ -1,4 +1,3 @@
-import itertools as itools
 import collections
 
 # gamma_rate = []
